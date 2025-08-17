@@ -15,7 +15,7 @@ const nodes: FlowNodeData[] = [
   { id: 'google', text: 'Google Endlessly', emoji: '🔮', position: { top: '65%', left: '50%' } },
   { id: 'waste', text: 'Waste Time', emoji: '⏳', position: { top: '85%', left: '50%' } },
   { id: 'cry', text: 'Cry', emoji: '😥', position: { top: '75%', left: '85%' } },
-  { id: 'deepfake', text: 'Is that really me?', emoji: '🤔', position: { top: '15%', left: '15%' }, tooltipText: "The video you see isn't real. It's a deepfake I generated to demonstrate the power and potential risks of modern AI. It's a reminder to always question what you see online." },
+  { id: 'deepfake', text: 'Is that really me?', emoji: '🤔', position: { top: '15%', left: '15%' }, tooltipText: "Good question. The animated image on the left (blue border) is a deepfake I generated. The photo on the right (purple border) is the real me. It's a reminder to always question what you see online!" },
 ];
 
 const boxes: BoundingBoxData[] = [

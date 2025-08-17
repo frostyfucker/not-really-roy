@@ -17,11 +17,18 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
             <h1 className="text-5xl font-bold text-center mb-8 no-print text-gradient">So, you have a problem?...</h1>
 
             <div className="text-center">
-                <img 
-                    src="https://github.com/frostyfucker/Resume/blob/main/not-really-roy-optimized.gif?raw=true" 
-                    alt="Roy Hodge Jr.'s Profile" 
-                    className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 shadow-lg object-cover print-hidden"
-                />
+                <div className="flex justify-center items-center gap-x-4 mb-4 print-hidden">
+                    <img 
+                        src="https://github.com/frostyfucker/Resume/blob/main/not-really-roy-optimized.gif?raw=true" 
+                        alt="Roy Hodge Jr.'s Profile - Animated Avatar" 
+                        className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
+                    />
+                    <img 
+                        src="https://github.com/frostyfucker/Resume/blob/main/486383399_1887378762072833_5696250165872260052_n.jpg?raw=true" 
+                        alt="Roy Hodge Jr.'s Profile - Photo" 
+                        className="w-32 h-32 rounded-full border-4 border-purple-500 shadow-lg object-cover"
+                    />
+                </div>
                 <h2 className="text-4xl font-bold print-text-black">Roy Hodge Jr.</h2>
                 
                 {/* Interactive Contact Icons */}
