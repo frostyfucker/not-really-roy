@@ -11,6 +11,7 @@ const keySkills = {
 
 const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
     const [isChatVisible, setIsChatVisible] = useState(false);
+    const [isStandardResumeVisible, setIsStandardResumeVisible] = useState(false);
 
     const handleShowChat = () => {
         setIsChatVisible(true);
@@ -38,7 +39,7 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                     {/* Right side: Bubble + Avatar */}
                     <div className="flex flex-col items-center gap-y-2">
                         <div className="p-3 rounded-lg bg-gray-700 text-white text-sm shadow-lg speech-bubble speech-bubble-right w-60">
-                            Indeed. But the real question is how you solve them.
+                            <span className="text-gradient font-bold">Indeed.</span> But the real question is how you solve them.
                         </div>
                         <img 
                             src="https://github.com/frostyfucker/Resume/blob/main/486383399_1887378762072833_5696250165872260052_n.jpg?raw=true" 
@@ -98,7 +99,26 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
 
             {isChatVisible && <DeepfakeChat />}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 print-block">
+            <div className="text-center my-8 no-print">
+                <button
+                    onClick={() => setIsStandardResumeVisible(prev => !prev)}
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    aria-expanded={isStandardResumeVisible}
+                    aria-controls="full-resume-panel"
+                >
+                    {isStandardResumeVisible ? 'Hide Traditional Resume' : 'View Traditional Resume'}
+                </button>
+            </div>
+
+            <div 
+                id="full-resume-panel"
+                className={`
+                    grid grid-cols-1 md:grid-cols-3 gap-10 overflow-hidden 
+                    transition-all ease-in-out duration-1000 
+                    print:overflow-visible print:max-h-none print:opacity-100
+                    ${isStandardResumeVisible ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}
+                `}
+            >
                 <div className="md:col-span-2 print-w-full">
                     <h3 className="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2 text-blue-300 print-header">Summary</h3>
                     <p className="text-gray-300 leading-relaxed print-text-black">
