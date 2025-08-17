@@ -20,3 +20,8 @@ export interface PathData {
   d: string;
   isDotted?: boolean;
 }
+
+export interface ChatMessage {
+  role: 'user' | 'model';
+  text: string;
+}

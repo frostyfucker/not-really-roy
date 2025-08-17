@@ -58,6 +58,12 @@ export const CodeIcon = ({ className = 'w-5 h-5 mr-2' }: { className?: string })
     </svg>
 );
 
+export const SendIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
+      <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826L11.25 8.25l-6.507-1.085A.75.75 0 003.105 2.29zM11.25 11.75l-6.507 1.085a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826L16.25 15.75l-1.085-6.507a.75.75 0 00-.826-.95L3.105 9.712v.001a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826L11.25 11.75z" />
+    </svg>
+);
+
 export const ExportIcon = ({ className = 'w-5 h-5 mr-2' }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />

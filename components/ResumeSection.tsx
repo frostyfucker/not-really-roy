@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import Flowchart from './Flowchart';
+import DeepfakeChat from './DeepfakeChat';
 import { GithubIcon, EmailIcon, CodeIcon, PhoneIcon, VideoCallIcon } from '../constants';
 
 const keySkills = {
@@ -17,7 +18,7 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
 
             <div className="text-center">
                 <img 
-                    src="https://github.com/frostyfucker/Resume/blob/main/GeneratedFileAugust172025-12_55PM-ezgif.com-optimize.gif?raw=true" 
+                    src="https://github.com/frostyfucker/Resume/blob/main/not-really-roy-optimized.gif?raw=true" 
                     alt="Roy Hodge Jr.'s Profile" 
                     className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 shadow-lg object-cover print-hidden"
                 />
@@ -142,6 +143,7 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                     </ul>
                 </div>
             </div>
+            <DeepfakeChat />
         </div>
     );
 });
