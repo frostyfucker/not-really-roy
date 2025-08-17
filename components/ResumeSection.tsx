@@ -63,6 +63,8 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                 <Flowchart />
             </div>
 
+            <DeepfakeChat />
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 print-block">
                 <div className="md:col-span-2 print-w-full">
                     <h3 className="text-2xl font-semibold mb-4 border-b-2 border-blue-500 pb-2 text-blue-300 print-header">Summary</h3>
@@ -143,7 +145,6 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                     </ul>
                 </div>
             </div>
-            <DeepfakeChat />
         </div>
     );
 });

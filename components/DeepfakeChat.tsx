@@ -80,7 +80,7 @@ const DeepfakeChat: React.FC = () => {
     };
 
     return (
-        <div id="forthelulz" className="w-full max-w-4xl mx-auto mt-16 p-4 md:p-6 rounded-xl bg-gray-900/70 border border-gray-700 shadow-2xl backdrop-blur-md no-print">
+        <div id="forthelulz" className="my-12 p-4 md:p-6 rounded-xl bg-gray-900/70 border border-gray-700 shadow-2xl backdrop-blur-md no-print">
             <h3 className="text-3xl font-bold text-center mb-6">
                 <span className="text-gradient">Speak with my AI Clone</span>
             </h3>
