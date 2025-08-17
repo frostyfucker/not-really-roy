@@ -1,7 +1,7 @@
 import React, { forwardRef, useState } from 'react';
 import Flowchart from './Flowchart';
 import DeepfakeChat from './DeepfakeChat';
-import { GithubIcon, EmailIcon, CodeIcon, PhoneIcon, VideoCallIcon } from '../constants';
+import { GithubIcon, EmailIcon, CodeIcon, PhoneIcon, VideoCallIcon, DevToIcon, CodepenIcon, FacebookIcon } from '../constants';
 
 const keySkills = {
   "Cybersecurity": ["Penetration Testing", "Vulnerability Assessment", "Advanced Threat Intelligence", "Incident Response", "Digital Forensics", "Red Team Operations", "Blockchain Security", "Cryptography", "RF & Hardware Reverse Engineering"],
@@ -62,6 +62,18 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                     <a href="https://calendly.com/royhodgejr/30min" target="_blank" rel="noopener noreferrer" aria-label="Schedule a video call">
                         <VideoCallIcon className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors" />
                     </a>
+                    <a href="https://github.com/frostyfucker" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <GithubIcon className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors" />
+                    </a>
+                    <a href="https://dev.to/frostyfucker" target="_blank" rel="noopener noreferrer" aria-label="Dev.to Profile">
+                        <DevToIcon className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors" />
+                    </a>
+                    <a href="https://codepen.io/frostyfucker" target="_blank" rel="noopener noreferrer" aria-label="CodePen Profile">
+                        <CodepenIcon className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors" />
+                    </a>
+                    <a href="https://www.facebook.com/roy.hodge.jr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                        <FacebookIcon className="w-6 h-6 text-gray-400 hover:text-blue-400 transition-colors" />
+                    </a>
                 </div>
 
                 {/* Print-only phone number */}
@@ -73,10 +85,6 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
                     <a href="mailto:roy.hodge.jr@protonmail.com" className="flex items-center hover:text-blue-400 transition-colors">
                         <EmailIcon className="w-5 h-5 mr-2" />
                         roy.hodge.jr@protonmail.com
-                    </a>
-                    <a href="https://github.com/frostyfucker" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
-                        <GithubIcon className="w-5 h-5 mr-2" />
-                        github.com/frostyfucker
                     </a>
                 </div>
             </div>
