@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { type FlowNodeData, type BoundingBoxData, type PathData } from '../types';
 
 const nodes: FlowNodeData[] = [
@@ -9,7 +9,7 @@ const nodes: FlowNodeData[] = [
     text: 'Hire Roy', 
     emoji: '🤝',
     position: { top: '35%', left: '50%' },
-    tooltipText: "(*The Real Physical Human Person) Roy Hodge Jr., Unless you're alright with AI agents then please speak with my deepfake clone <a href=\"#forthelulz\" class=\"text-blue-400 underline hover:text-blue-300\">here</a>."
+    tooltipText: "(*The Real Physical Human Person) Roy Hodge Jr., Unless you're alright with AI agents then please speak with my deepfake clone <a href=\"#forthelulz\" id=\"show-chat-link\" class=\"text-blue-400 underline hover:text-blue-300 cursor-pointer\">here</a>."
   },
   { id: 'profit', text: 'Profit', emoji: '📈', position: { top: '25%', left: '85%' } },
   { id: 'google', text: 'Google Endlessly', emoji: '🔮', position: { top: '65%', left: '50%' } },
@@ -76,7 +76,34 @@ const FlowNode: React.FC<{ node: FlowNodeData }> = ({ node }) => {
   );
 };
 
-const Flowchart: React.FC = () => {
+interface FlowchartProps {
+  onShowChat: () => void;
+}
+
+const Flowchart: React.FC<FlowchartProps> = ({ onShowChat }) => {
+  useEffect(() => {
+    const link = document.getElementById('show-chat-link');
+    if (link) {
+      const handleClick = (e: MouseEvent) => {
+        e.preventDefault();
+        onShowChat();
+        
+        setTimeout(() => {
+            const chatSection = document.getElementById('forthelulz');
+            if (chatSection) {
+              chatSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 0);
+      };
+      
+      link.addEventListener('click', handleClick);
+
+      return () => {
+        link.removeEventListener('click', handleClick);
+      };
+    }
+  }, [onShowChat]);
+
   return (
     <div className="w-full max-w-5xl mx-auto h-[400px] md:h-[500px] relative mt-8 no-print">
       {boxes.map((box) => (

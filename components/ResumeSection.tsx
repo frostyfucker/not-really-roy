@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import Flowchart from './Flowchart';
 import DeepfakeChat from './DeepfakeChat';
 import { GithubIcon, EmailIcon, CodeIcon, PhoneIcon, VideoCallIcon } from '../constants';
@@ -10,24 +10,42 @@ const keySkills = {
 };
 
 const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
+    const [isChatVisible, setIsChatVisible] = useState(false);
+
+    const handleShowChat = () => {
+        setIsChatVisible(true);
+    };
     
     return (
         <div ref={ref} className="w-full max-w-4xl mx-auto p-4 md:p-8 rounded-xl bg-gray-800/50 border border-gray-700 shadow-2xl backdrop-blur-sm print-bg-white print-shadow-none print-border-none print-p-0">
             
-            <h1 className="text-5xl font-bold text-center mb-8 no-print text-gradient">So, you have a problem?...</h1>
+            <h1 className="text-5xl font-bold text-center mb-8 no-print text-gradient">So, you have problems?...</h1>
 
             <div className="text-center">
-                <div className="flex justify-center items-center gap-x-4 mb-4 print-hidden">
-                    <img 
-                        src="https://github.com/frostyfucker/Resume/blob/main/not-really-roy-optimized.gif?raw=true" 
-                        alt="Roy Hodge Jr.'s Profile - Animated Avatar" 
-                        className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
-                    />
-                    <img 
-                        src="https://github.com/frostyfucker/Resume/blob/main/486383399_1887378762072833_5696250165872260052_n.jpg?raw=true" 
-                        alt="Roy Hodge Jr.'s Profile - Photo" 
-                        className="w-32 h-32 rounded-full border-4 border-purple-500 shadow-lg object-cover"
-                    />
+                 {/* Avatars and Bubbles */}
+                <div className="flex justify-center items-end gap-x-4 mb-4 print-hidden">
+                    {/* Left side: Bubble + Avatar */}
+                    <div className="flex flex-col items-center gap-y-2">
+                        <div className="p-3 rounded-lg bg-gray-700 text-white text-sm shadow-lg speech-bubble speech-bubble-left">
+                            Psh, don't we all?
+                        </div>
+                        <img 
+                            src="https://github.com/frostyfucker/Resume/blob/main/not-really-roy-optimized.gif?raw=true" 
+                            alt="Roy Hodge Jr.'s Profile - Animated Avatar" 
+                            className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg object-cover"
+                        />
+                    </div>
+                    {/* Right side: Bubble + Avatar */}
+                    <div className="flex flex-col items-center gap-y-2">
+                        <div className="p-3 rounded-lg bg-gray-700 text-white text-sm shadow-lg speech-bubble speech-bubble-right w-60">
+                            Indeed. But the real question is how you solve them.
+                        </div>
+                        <img 
+                            src="https://github.com/frostyfucker/Resume/blob/main/486383399_1887378762072833_5696250165872260052_n.jpg?raw=true" 
+                            alt="Roy Hodge Jr.'s Profile - Photo" 
+                            className="w-32 h-32 rounded-full border-4 border-purple-500 shadow-lg object-cover"
+                        />
+                    </div>
                 </div>
                 <h2 className="text-4xl font-bold print-text-black">Roy Hodge Jr.</h2>
                 
@@ -65,12 +83,12 @@ const ResumeSection = forwardRef<HTMLDivElement>((props, ref) => {
 
             <div className="my-12 py-8 border-y border-gray-700 no-print">
                 <h3 className="text-2xl font-semibold mb-4 text-center">
-                    <span className="text-gradient">Well,</span> then here's your current decision path...
+                    <span className="text-gradient">Well,</span> then here is your current decision path...
                 </h3>
-                <Flowchart />
+                <Flowchart onShowChat={handleShowChat} />
             </div>
 
-            <DeepfakeChat />
+            {isChatVisible && <DeepfakeChat />}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 print-block">
                 <div className="md:col-span-2 print-w-full">
